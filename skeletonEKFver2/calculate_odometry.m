@@ -17,4 +17,10 @@ if ~delta_t
     return;
 end
 % FILL IN HERE
+u=zeros(3,1);
+wtr=2*pi*e_R/E_T/delta_t;
+wtl=2*pi*e_L/E_T/delta_t;
+wt=(wtr*R_R-wtl*R_L)/B;
+vt=(wtr*R_R+wtl*R_L)/2;
+u=delta_t*[vt,vt,wt]'.*[cos(mu(3)),sin(mu(3)),1]';
 end
