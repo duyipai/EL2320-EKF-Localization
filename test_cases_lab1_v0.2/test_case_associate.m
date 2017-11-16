@@ -14,6 +14,7 @@ for i = 1 : NUM_TEST
     try
         [c,outlier, nu, s, h] = associate(mu_bar,sigma_bar,z_i,M,Lambda_m,q);
     catch exception
+        display(exception);
         break;
     end
     errs_c(i) = c ~= C(i);
