@@ -11,7 +11,10 @@
 % Outputs:
 %           mu_bar(t)       3X1
 %           sigma_bar(t)    3X3
-function [mu_bar,sigma_bar] = update_(mu_bar,sigma_bar,H_bar,S_bar,nu_bar)
+function [mu_bar,sigma_bar] = update(mu_bar,sigma_bar,H_bar,S_bar,nu_bar)
 % FILL IN HERE
+K=sigma_bar*H_bar'/S_bar;
+mu_bar=mu_bar+K*nu_bar;
+sigma_bar=(eye(3,3)-K*H_bar)*sigma_bar;
 sigma_bar = (sigma_bar + sigma_bar')/2;
 end
