@@ -67,7 +67,7 @@ else
         nu_bar = squeeze(nu(:,c));
         S_bar = squeeze(S(:,:,c));
         H_bar = squeeze(H(:,:,c));
-        [mu_bar,sigma_bar] = update_(mu_bar,sigma_bar,H_bar,S_bar,nu_bar);   
+        [mu_bar,sigma_bar] = update(mu_bar,sigma_bar,H_bar,S_bar,nu_bar);   
     end
     mu = mu_bar;
     sigma = sigma_bar;

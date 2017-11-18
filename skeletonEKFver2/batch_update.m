@@ -13,5 +13,8 @@
 %           sigma(t)        3X3
 function [mu,sigma] = batch_update(mu_bar,sigma_bar,H_bar,Q_bar,nu_bar)
 % FILL IN HERE
+K=sigma_bar*H_bar'/(H_bar*sigma_bar*H_bar'+Q_bar);
+mu=mu_bar+K*nu_bar;
+sigma=sigma_bar-K*H_bar*sigma_bar;
 sigma = (sigma + sigma')/2;
 end
