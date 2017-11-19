@@ -59,7 +59,7 @@ vStd = 0.1;    % Simulated measurement noise on position
 % The Kalman Filter modeled uncertainties and initial values
 
 xhat = [-2 0]';
-P = eye(2)*1;
+P = eye(2)*100;
 G = eye(2);
 D = 1;
 R = diag([0.01^2 0.1^2]);

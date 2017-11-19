@@ -20,7 +20,7 @@ function [mu,sigma,outliers] = ekf_localize(mu,sigma,R,Q,z,known_associations,u,
 [mu_bar,sigma_bar] = predict(mu,sigma,u,R);
 n = size(z,2);
 USE_KNOWN_ASSOCIATIONS = 0;
-USE_BATCH_UPDATE = 0;
+USE_BATCH_UPDATE = 1;
 outliers = 0;
 count = 0;
 if USE_BATCH_UPDATE
